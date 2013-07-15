@@ -1,4 +1,5 @@
 class Individual < ActiveRecord::Base
   attr_accessible :userName
-  has_belongs_to_many :groups
+  has_many :courses
+  has_and_belongs_to_many :groups
 end
