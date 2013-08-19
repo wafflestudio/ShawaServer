@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715084010) do
+ActiveRecord::Schema.define(:version => 20130819081446) do
 
   create_table "courses", :force => true do |t|
     t.string   "courseName"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "individual_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "groups", :force => true do |t|
@@ -31,6 +32,11 @@ ActiveRecord::Schema.define(:version => 20130715084010) do
     t.integer "individual_id"
   end
 
+  create_table "groups_users", :force => true do |t|
+    t.integer "user_id"
+    t.integer "group_id"
+  end
+
   create_table "individuals", :force => true do |t|
     t.string   "userName"
     t.datetime "created_at", :null => false
@@ -38,12 +44,20 @@ ActiveRecord::Schema.define(:version => 20130715084010) do
   end
 
   create_table "lectures", :force => true do |t|
-    t.integer  "day"
+    t.string   "day"
     t.float    "period"
     t.float    "duration"
     t.string   "location"
+    t.integer  "course_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "device_token"
+    t.integer  "my_group_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end
