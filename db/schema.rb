@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130819081446) do
+ActiveRecord::Schema.define(:version => 20130820141838) do
 
   create_table "courses", :force => true do |t|
     t.string   "courseName"
@@ -23,18 +23,10 @@ ActiveRecord::Schema.define(:version => 20130819081446) do
   create_table "groups", :force => true do |t|
     t.string   "groupName"
     t.integer  "groupType"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "groups_individuals", :id => false, :force => true do |t|
-    t.integer "group_id"
-    t.integer "individual_id"
-  end
-
-  create_table "groups_users", :force => true do |t|
-    t.integer "user_id"
-    t.integer "group_id"
+    t.string   "individual_ids"
+    t.integer  "user_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "individuals", :force => true do |t|
@@ -55,9 +47,9 @@ ActiveRecord::Schema.define(:version => 20130819081446) do
 
   create_table "users", :force => true do |t|
     t.string   "device_token"
-    t.integer  "my_group_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "my_individual_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end

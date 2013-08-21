@@ -2,6 +2,7 @@ ShawaServer::Application.routes.draw do
 match 'test/' => 'test#index'
 match 'user/:device_token' => 'test#token_to_user'
 match 'group/:id' => 'test#group_id_to_group'
+match 'individual/:id' => 'test#individual_id_to_individual'
 # The priority is based upon order of creation:
   # first created -> highest priority.
 
