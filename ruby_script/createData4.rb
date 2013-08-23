@@ -90,7 +90,7 @@ i1.courses.push(c5)
 i1.save
 
 u1 = User.new
-u1.device_token = "843DC8AD-2090-4925-A8F2-0FAE71EFDBC5"
+u1.device_token = "4742369C-37CE-4C51-9E8E-918D2396BABE"
 u1.my_individual_id = i1.id
 
 g1 = Group.new
